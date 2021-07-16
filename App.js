@@ -1,18 +1,18 @@
-import React from "react"
+import React,{useState} from 'react'
 import "./style.css"
-import Button from "./Button"
 
-const App=()=>{
+const App = ()=>{
+
+    let [score, setScore] = useState(0)
+    
     return(
         <div>
-            <h1 style={{ textAlign : "center"}}> Hello world </h1>
-            <h2> Hi Everyone !!</h2> 
-            <Button buttonText="Name"/>
-            <Button buttonText="Email"/>
-            <Button buttonText="Phone"/>
-            <h2> Here you can enter your details</h2> 
-       </div>
-       
+             <h1> Hey this is my Counter Application </h1>
+             <h3>The value of score is {score}</h3>
+             <button onClick={()=>(score<25)? setScore(score+1) : ""}> Increment </button>
+             <button onClick={()=>(score>0)? setScore(score-1) : "" }> Decrement </button>
+             <button onClick={()=>{setScore(0)}}> Reset </button>
+        </div>
     )
 }
 
